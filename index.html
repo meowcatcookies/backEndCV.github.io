@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>梁宇僑 - 後端工程師履歷</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
@@ -43,8 +45,8 @@
             margin-left: auto;
         }
 
-        .container {
-            max-width: 900px;
+        .container-custom {
+            max-width: 1200px;
             margin: 30px auto;
             background-color: var(--white-color);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -108,28 +110,26 @@
             font-size: 0.9em;
         }
 
-            .highlights-list li {
-                margin-bottom: 10px;
-                /*                display: flex;
-                align-items: flex-start;*/
-            }
+        .highlights-list li {
+            margin-bottom: 10px;
+        }
 
-                .highlights-list li::before {
-                    content: '✓';
-                    color: var(--accent-color);
-                    font-weight: bold;
-                    margin-right: 10px;
-                    font-size: 1.2em;
-                }
+        .highlights-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
 
         .skills-list {
             list-style: none;
             padding-left: 0;
         }
 
-            .skills-list > li {
-                margin-bottom: 15px;
-            }
+        .skills-list > li {
+            margin-bottom: 15px;
+        }
 
         .skill-category {
             font-weight: 700;
@@ -198,9 +198,29 @@
             margin-top: 10px;
         }
 
+        .bold-text {
+            font-weight: 700;
+            color: white;
+        }
+
+        .accordion-button {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+            .container-custom {
                 flex-direction: column;
                 margin: 0;
             }
@@ -213,7 +233,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-custom">
         <aside class="left-panel">
             <div class="header-row">
                 <header class="profile-header">
@@ -224,15 +244,15 @@
             </div>
             <section class="section summary">
                 <h3 class="section-title">個人簡介</h3>
-                <p>工程師的本質是解決問題，而我的個性是在問題得到解答前絕不停止探索。我相信及早掌握Ai工具的能力是未來工程師的核心競爭力。</p>
+                <p>具備 <strong>1</strong> 年後端軟體開發經驗，專精於 <strong>C#/.NET</strong> 生態系。擅長開發與維護高效率 <strong>Web API</strong> 服務，並能從<strong>系統分析</strong>角度，解決<strong>非功能性需求</strong>如效能、安全與擴展性問題。過往經歷中，透過<strong>架構優化</strong>成功降低伺服器成本，並有效提升系統穩定性。對現代後端架構與敏捷開發流程有深入理解。</p>
             </section>
 
             <section class="section">
                 <h3 class="section-title">關鍵亮點</h3>
                 <ul class="highlights-list">
-                    <li><b>成本思維：</b>大學時期ERP專案榮獲全國大賽冠軍。</li>
-                    <li><b>商業執行：</b>個人電商創業，四個月內銷售額突破七位數。</li>
-                    <li><b>全端開發：</b>獨立負責專案的全端程式撰寫、資料串接及雲端部署。</li>
+                    <li><span class="bold-text">成本思維：</span>大學時期ERP專案榮獲全國大賽冠軍。</li>
+                    <li><span class="bold-text">商業執行：</span>個人電商創業，四個月內銷售額突破七位數。</li>
+                    <li><span class="bold-text">全端開發：</span>獨立負責專案的全端程式撰寫、資料串接及雲端部署。</li>
                 </ul>
             </section>
 
@@ -240,43 +260,34 @@
                 <h3 class="section-title">核心技能</h3>
                 <ul class="skills-list">
                     <li>
-                        <div class="skill-category">後端</div>
+                        <div class="skill-category">後端語言與框架</div>
                         <ul class="sub-skills">
-                            <li>.NET Core MVC/WebApi/Function</li>
-                            <li>Entity Framework / Dapper / LINQ</li>
-                            <li>ASP.NET Core Identity (JWT/Owin)</li>
-                            <li>Cache</li>
-                            <li>Dependency Injection</li>
-                            <li>Azure Blob, Timer Trigger</li>
+                            <li>C#, .NET Framework 4.7, .NET 6/8</li>
+                            <li>ASP.NET Web API, ASP.NET MVC, Azure Function</li>
+                            <li>非同步程式設計, 依賴注入 (Dependency Injection)</li>
+                            <li>RESTful API, ASP.NET Core Identity (JWT/Owin)</li>
                         </ul>
                     </li>
                     <li>
-                        <div class="skill-category">資料庫</div>
+                        <div class="skill-category">資料庫技術</div>
                         <ul class="sub-skills">
-                            <li>MSSQL</li>
-                            <li>TSQL</li>
-                            <li>INDEX</li>
-                            <li>Stored Procedure</li>
-                            <li>Schema設計</li>
-                            <li>正規化</li>
+                            <li>MSSQL, T-SQL</li>
+                            <li>Entity Framework, Dapper, LINQ</li>
+                            <li>索引 (INDEX), 儲存程序 (Stored Procedure), 綱要設計 (Schema Design)</li>
                         </ul>
                     </li>
                     <li>
-                        <div class="skill-category">前端</div>
+                        <div class="skill-category">雲端與工具</div>
                         <ul class="sub-skills">
-                            <li>JavaScript (AJAX)</li>
-                            <li>Bootstrap (RWD)</li>
+                            <li>Microsoft Azure (Azure SQL, Blob, Timer Trigger)</li>
+                            <li>Git (GitHub), Swagger, PostMan, PowerShell</li>
                         </ul>
                     </li>
                     <li>
-                        <div class="skill-category">工具</div>
+                        <div class="skill-category">安全與優化</div>
                         <ul class="sub-skills">
-                            <li>Git / GitHub</li>
-                            <li>GitHub Copilot</li>
-                            <li>Visual Studio</li>
-                            <li>VSCode</li>
-                            <li>PostMan</li>
-                            <li>HackMD</li>
+                            <li>CSRF, XSS, Content Security Policy (CSP)</li>
+                            <li>快取 (IMemoryCache), 執行計畫 (Execution Plan) 分析</li>
                         </ul>
                     </li>
                 </ul>
@@ -305,27 +316,85 @@
                     <p class="job-location">Taoyuan, Taiwan</p>
                 </article>
             </section>
+            
             <section class="section">
-                <h3 class="section-title">技術詳述</h3>
-                <ul class="skills-list">
-                    <li>
-                        <strong class="skill-category">C# / .NET Core & Framework</strong>
-                        <p class="skill-description">使用 .NET 框架處理 HTTP 路由、REST API 及 Middleware，並結合 Razor 模板引擎渲染動態頁面，實現用戶管理、商品列表、購物車等電商功能。</p>
-                    </li>
-                    <li>
-                        <strong class="skill-category">資料存取 (EF / Dapper / LINQ)</strong>
-                        <p class="skill-description">採用 EF DB First 生成模型與 ORM 綁定，於關鍵邏輯中導入 Dapper 提升資料讀取速度，並利用 LINQ 增加撰寫彈性及預防 SQL Injection。</p>
-                    </li>
-                    <li>
-                        <strong class="skill-category">雲端與自動化 (Azure)</strong>
-                        <p class="skill-description">利用 Azure Function (Timer Trigger) 執行排程任務，如更新資料庫狀態或發送通知。使用 Azure Blob 存儲圖片等靜態檔案，並依需求彈性調整雲端資源成本。</p>
-                    </li>
-                    <li>
-                        <strong class="skill-category">前端互動技術 (JavaScript / Bootstrap)</strong>
-                        <p class="skill-description">透過 Partial View + AJAX 實現無需刷新頁面的非同步數據傳遞，提升用戶體驗。運用 Bootstrap 快速建構 RWD 跨裝置響應式版面。</p>
-                    </li>
-                </ul>
+                <h3 class="section-title">專業經歷與技術應用</h3>
+                
+                <div class="accordion" id="experienceAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                後端開發與架構優化（C# & .NET Framework / .NET）
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#experienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>系統與職責：</strong> 負責開發與維護後勤管理系統的後端服務，此系統旨在提升勞力密集型產業的協作效率，主要功能包含<strong>權限分級、任務自動指派、資料分析與報表生成</strong>。</li>
+                                    <li><strong>技術優化：</strong>
+                                        <ul>
+                                            <li>將服務改為<strong>依賴注入 (Dependency Injection)</strong> 進行管理，並將同步方法重構為<strong>非同步方法</strong>，顯著提升應用程式響應速度。</li>
+                                            <li>將低效的 Entity Framework 查詢替換為高效的 <strong>Dapper</strong>，並搭配<strong>非叢集索引</strong>優化資料庫查詢。</li>
+                                            <li>運用 <strong>.NET IMemoryCache</strong> 實作快取機制，提升常用資料的讀取效能；同時利用快取處理黑名單邏輯，確保系統穩定性與安全性。</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                新專案開發與協作 (.NET Web API)
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#experienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>API 開發與文件：</strong> 參與新專案後端 API 開發，採用<strong>前後端分離架構</strong>。使用 <strong>Swagger</strong> 建立 <strong>OpenAPI 規格文件</strong>，並透過 <code>summary</code> 註解自動生成詳細 API 文件，大幅提升與前端團隊的協作效率。</li>
+                                    <li><strong>欄位權限管理：</strong> 實現<strong>欄位級權限控制</strong>，使系統可根據使用者權限動態顯示不同欄位，賦予業主高度客製化能力。</li>
+                                    <li><strong>資料庫操作抽象化：</strong> 嘗試透過反射 (Reflection) 技術，利用 Class 物件自動組建 SQL 語法進行 CRUD 操作。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                資料庫效能優化 (T-SQL & Azure SQL)
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#experienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>效能瓶頸分析：</strong> 透過 Azure SQL 與 SSMS 的「最耗效能的查詢」報告，定位並優化高負載查詢，確保邏輯精簡。</li>
+                                    <li><strong>語法與架構重構：</strong> 運用 <strong>CTE (Common Table Expressions)</strong> 等 T-SQL 語法重構複雜查詢，並設計<strong>「每日彙總資料表」</strong>，將多個關聯表的資料預先彙總，大幅提升查詢效能。</li>
+                                    <li><strong>顯著成果：</strong> 成功將 Azure SQL 的服務等級從 <strong>V6 降低至 V2</strong>，有效節省成本並解決 CPU 負載超過 90% 的尖峰問題。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                系統安全與維護
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#experienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>部署與配置安全：</strong> 實施部署連線字串<strong>加密</strong>，並將敏感資訊設定為需讀取<strong>環境變數</strong>才能存取。</li>
+                                    <li><strong>前端安全性強化：</strong> 升級所有過時的前端依賴套件，並在 HTTP 標頭中加入 <strong>Content Security Policy (CSP)</strong> 規範，防止網站被 iframe 嵌入。同時強化 JavaScript 程式碼以防禦 <strong>XSS</strong> 攻擊。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+            
             <section class="section">
                 <h3 class="section-title">學歷與訓練</h3>
                 <article class="education-item">
@@ -346,6 +415,7 @@
                     <p class="education-description">專案：為中小企業導入 SAP B1 並建立知識管理系統。</p>
                 </article>
             </section>
+            
             <section class="section">
                 <h3 class="section-title">SQL 效能優化</h3>
                 <p style="font-size: 0.9em; color: #555;">透過索引優化、查詢重構與減少資料庫往返次數，顯著降低了多個查詢場景的執行時間。圖表顯示了優化前後的效能對比（時間單位：毫秒）。</p>
@@ -353,6 +423,7 @@
             </section>
         </main>
     </div>
+    
     <script>
         const ctx = document.getElementById('optimizationChart').getContext('2d');
         const optimizationChart = new Chart(ctx, {
